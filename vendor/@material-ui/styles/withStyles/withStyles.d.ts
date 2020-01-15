@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PropInjector, IsEmptyInterface } from '@material-ui/types';
+import { PropInjector } from '@material-ui/types';
 import * as CSS from 'csstype';
 import * as JSS from 'jss';
 import { DefaultTheme } from '../defaultTheme';
@@ -43,9 +43,7 @@ export interface CreateCSSProperties<Props extends object = {}>
  */
 export type StyleRules<Props extends object = {}, ClassKey extends string = string> = Record<
   ClassKey,
-  IsEmptyInterface<Props> extends true
-    ? CSSProperties | (() => CSSProperties)
-    : CreateCSSProperties<Props> | ((props: Props) => CreateCSSProperties<Props>)
+  CreateCSSProperties<Props> | ((props: Props) => CreateCSSProperties<Props>)
 >;
 
 /**

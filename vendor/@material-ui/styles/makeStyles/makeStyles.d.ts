@@ -5,26 +5,9 @@ import {
   Styles,
   WithStylesOptions,
 } from '@material-ui/styles/withStyles';
-import { Omit, IsAny, Or, IsEmptyInterface } from '@material-ui/types';
+import { Omit } from '@material-ui/types';
 import { DefaultTheme } from '../defaultTheme';
 
-/**
- * @internal
- *
- * If a style callback is given with `theme => stylesOfTheme` then typescript
- * infers `Props` to `any`.
- * If a static object is given with { ...members } then typescript infers `Props`
- * to `{}`.
- *
- * So we require no props in `useStyles` if `Props` in `makeStyles(styles)` is
- * inferred to either `any` or `{}`
- */
-export type StylesRequireProps<S> = Or<
-  IsAny<PropsOfStyles<S>>,
-  IsEmptyInterface<PropsOfStyles<S>>
-> extends true
-  ? false
-  : true;
 
 /**
  * @internal
@@ -33,9 +16,7 @@ export type StylesRequireProps<S> = Or<
  * from which the typechecker could infer a type so it falls back to `any`.
  * See the test cases for examples and implications of explicit `any` annotation
  */
-export type StylesHook<S extends Styles<any, any>> = StylesRequireProps<S> extends false
-  ? (props?: any) => ClassNameMap<ClassKeyOfStyles<S>>
-  : (props: PropsOfStyles<S>) => ClassNameMap<ClassKeyOfStyles<S>>;
+export type StylesHook<S extends Styles<any, any>> = (props?: PropsOfStyles<S>) => ClassNameMap<ClassKeyOfStyles<S>>
 
 export default function makeStyles<
   Theme = DefaultTheme,
