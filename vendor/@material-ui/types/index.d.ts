@@ -44,25 +44,3 @@ export type Omit<T, K extends keyof any> = T extends any ? Pick<T, Exclude<keyof
  * @internal
  */
 export type Overwrite<T, U> = Omit<T, keyof U> & U;
-
-/**
- * Returns true if T is any, otherwise false
- */
-// https://stackoverflow.com/a/49928360/3406963 without generic branch types
-export type IsAny<T> = 0 extends (1 & T) ? true : false;
-
-export type Or<A, B, C = false> = A extends true
-  ? true
-  : B extends true
-  ? true
-  : C extends true
-  ? true
-  : false;
-
-export type And<A, B, C = true> = A extends true
-  ? B extends true
-    ? C extends true
-      ? true
-      : false
-    : false
-  : false;

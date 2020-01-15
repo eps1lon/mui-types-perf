@@ -1,14 +1,14 @@
 Files:            54
-Lines:         61486
-Nodes:        180332
-Identifiers:   62560
-Symbols:      103229
-Types:         36758
-Memory used: 152281K
-I/O read:      0.01s
+Lines:         61464
+Nodes:        180242
+Identifiers:   62543
+Symbols:      103216
+Types:         36751
+Memory used: 152222K
+I/O read:      0.02s
 I/O write:     0.00s
-Parse time:    0.57s
-Bind time:     0.23s
-Check time:    3.68s
+Parse time:    0.62s
+Bind time:     0.24s
+Check time:    3.11s
 Emit time:     0.00s
-Total time:    4.48s
+Total time:    3.97s
