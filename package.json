@@ -1,0 +1,23 @@
+{
+  "name": "mui-types-perf",
+  "version": "1.0.0",
+  "description": "benchmarking types perf of Material-UI",
+  "main": "index.js",
+  "author": "Sebastian Silbermann",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "diag:IsEmptyInterface": "tsc -p tsconfig.IsEmptyInterface.json | tee __snapshots__/IsEmptyInterface",
+    "perf:IsEmptyInterface": "./benchmark.sh 10 \"yarn tsc -p tsconfig.IsEmptyInterface.json\""
+  },
+  "dependencies": {
+    "@material-ui/core": "link:./vendor/@material-ui/core",
+    "@material-ui/styles": "link:./vendor/@material-ui/styles",
+    "@material-ui/types": "link:./vendor/@material-ui/types",
+    "@types/react": "16.9.17",
+    "@types/react-dom": "16.9.4",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "typescript": "3.7.4"
+  }
+}
