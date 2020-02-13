@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "diagnostics": true,
+    "noEmit": true
+  },
+  "files": ["sources/styled-components.test.ts"]
+}
