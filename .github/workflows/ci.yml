@@ -27,7 +27,7 @@ jobs:
           yarn diag:styled-components
           yarn perf:styled-components
 
-      - name: @material-ui/styles#styled benchmark
+      - name: '@material-ui/styles#styled benchmark'
         run: |
           yarn diag:styled-mui
           yarn perf:styled-mui
