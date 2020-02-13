@@ -44,6 +44,12 @@ export const styles = theme => ({
   vertical: {
     height: '100%',
     width: 1
+  },
+
+  /* Styles applied to the root element if `flexItem={true}`. */
+  flexItem: {
+    alignSelf: 'stretch',
+    height: 'auto'
   }
 });
 const Divider = React.forwardRef(function Divider(props, ref) {
@@ -52,15 +58,16 @@ const Divider = React.forwardRef(function Divider(props, ref) {
     classes,
     className,
     component: Component = 'hr',
+    flexItem = false,
     light = false,
     orientation = 'horizontal',
     role = Component !== 'hr' ? 'separator' : undefined,
     variant = 'fullWidth'
   } = props,
-        other = _objectWithoutPropertiesLoose(props, ["absolute", "classes", "className", "component", "light", "orientation", "role", "variant"]);
+        other = _objectWithoutPropertiesLoose(props, ["absolute", "classes", "className", "component", "flexItem", "light", "orientation", "role", "variant"]);
 
   return React.createElement(Component, _extends({
-    className: clsx(classes.root, className, variant !== 'fullWidth' && classes[variant], absolute && classes.absolute, light && classes.light, {
+    className: clsx(classes.root, className, variant !== 'fullWidth' && classes[variant], absolute && classes.absolute, flexItem && classes.flexItem, light && classes.light, {
       vertical: classes.vertical
     }[orientation]),
     role: role,
@@ -89,6 +96,11 @@ process.env.NODE_ENV !== "production" ? Divider.propTypes = {
    * Either a string to use a DOM element or a component.
    */
   component: PropTypes.elementType,
+
+  /**
+   * If `true`, the divider will adapt to a parent flex container.
+   */
+  flexItem: PropTypes.bool,
 
   /**
    * If `true`, the divider will have a lighter color.

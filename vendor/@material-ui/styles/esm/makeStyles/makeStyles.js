@@ -198,7 +198,7 @@ function useSynchronousEffect(func, values) {
   );
 }
 
-function makeStyles(stylesOrCreator) {
+export default function makeStyles(stylesOrCreator) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   var name = options.name,
@@ -249,5 +249,3 @@ function makeStyles(stylesOrCreator) {
     return getClasses(instance.current, props.classes, Component);
   };
 }
-
-export default makeStyles;

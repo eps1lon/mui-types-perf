@@ -12,9 +12,7 @@ export const styles = theme => ({
     color: theme.palette.text.secondary
   }, theme.typography.caption, {
     textAlign: 'left',
-    marginTop: 8,
-    lineHeight: '1em',
-    minHeight: '1em',
+    marginTop: 3,
     margin: 0,
     '&$disabled': {
       color: theme.palette.text.disabled
@@ -37,7 +35,8 @@ export const styles = theme => ({
 
   /* Styles applied to the root element if `variant="filled"` or `variant="outlined"`. */
   contained: {
-    margin: '8px 14px 0'
+    marginLeft: 14,
+    marginRight: 14
   },
 
   /* Pseudo-class applied to the root element if `focused={true}`. */
@@ -51,11 +50,12 @@ export const styles = theme => ({
 });
 const FormHelperText = React.forwardRef(function FormHelperText(props, ref) {
   const {
+    children,
     classes,
     className,
     component: Component = 'p'
   } = props,
-        other = _objectWithoutPropertiesLoose(props, ["classes", "className", "component", "disabled", "error", "filled", "focused", "margin", "required", "variant"]);
+        other = _objectWithoutPropertiesLoose(props, ["children", "classes", "className", "component", "disabled", "error", "filled", "focused", "margin", "required", "variant"]);
 
   const muiFormControl = useFormControl();
   const fcs = formControlState({
@@ -68,11 +68,18 @@ const FormHelperText = React.forwardRef(function FormHelperText(props, ref) {
       dense: classes.marginDense
     }[fcs.margin]),
     ref: ref
-  }, other));
+  }, other), children === ' ' ? // eslint-disable-next-line react/no-danger
+  React.createElement("span", {
+    dangerouslySetInnerHTML: {
+      __html: '&#8203;'
+    }
+  }) : children);
 });
 process.env.NODE_ENV !== "production" ? FormHelperText.propTypes = {
   /**
    * The content of the component.
+   *
+   * If `' '` is provided, the component reserves one line height for displaying a future message.
    */
   children: PropTypes.node,
 

@@ -161,11 +161,10 @@ const Switch = React.forwardRef(function Switch(props, ref) {
     classes,
     className,
     color = 'secondary',
-    disabled = false,
     edge = false,
     size = 'medium'
   } = props,
-        other = _objectWithoutPropertiesLoose(props, ["classes", "className", "color", "disabled", "edge", "size"]);
+        other = _objectWithoutPropertiesLoose(props, ["classes", "className", "color", "edge", "size"]);
 
   const icon = React.createElement("span", {
     className: classes.thumb
@@ -187,8 +186,7 @@ const Switch = React.forwardRef(function Switch(props, ref) {
       checked: classes.checked,
       disabled: classes.disabled
     },
-    ref: ref,
-    disabled: disabled
+    ref: ref
   }, other)), React.createElement("span", {
     className: classes.track
   }));

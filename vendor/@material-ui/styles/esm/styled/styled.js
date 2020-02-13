@@ -19,7 +19,7 @@ function omit(input, fields) {
 // Using components as a low-level styling construct can be simpler.
 
 
-function styled(Component) {
+export default function styled(Component) {
   var componentCreator = function componentCreator(style) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
@@ -151,5 +151,3 @@ function styled(Component) {
 
   return componentCreator;
 }
-
-export default styled;

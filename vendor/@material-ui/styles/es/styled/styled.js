@@ -19,7 +19,7 @@ function omit(input, fields) {
 // Using components as a low-level styling construct can be simpler.
 
 
-function styled(Component) {
+export default function styled(Component) {
   const componentCreator = (style, options = {}) => {
     const {
       name
@@ -149,5 +149,3 @@ function styled(Component) {
 
   return componentCreator;
 }
-
-export default styled;

@@ -65,5 +65,4 @@ function () {
   return ServerStyleSheets;
 }();
 
-var _default = ServerStyleSheets;
-exports.default = _default;
+exports.default = ServerStyleSheets;

@@ -185,13 +185,11 @@ var Switch = _react.default.forwardRef(function Switch(props, ref) {
       className = props.className,
       _props$color = props.color,
       color = _props$color === void 0 ? 'secondary' : _props$color,
-      _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
       _props$edge = props.edge,
       edge = _props$edge === void 0 ? false : _props$edge,
       _props$size = props.size,
       size = _props$size === void 0 ? 'medium' : _props$size,
-      other = (0, _objectWithoutProperties2.default)(props, ["classes", "className", "color", "disabled", "edge", "size"]);
+      other = (0, _objectWithoutProperties2.default)(props, ["classes", "className", "color", "edge", "size"]);
 
   var icon = _react.default.createElement("span", {
     className: classes.thumb
@@ -214,8 +212,7 @@ var Switch = _react.default.forwardRef(function Switch(props, ref) {
       checked: classes.checked,
       disabled: classes.disabled
     },
-    ref: ref,
-    disabled: disabled
+    ref: ref
   }, other)), _react.default.createElement("span", {
     className: classes.track
   }));

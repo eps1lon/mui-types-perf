@@ -77,6 +77,17 @@ export const styles = theme => {
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.secondary.contrastText
+    },
+
+    /* Styles applied to the root element if `color="inherit"`. */
+    colorInherit: {
+      color: 'inherit'
+    },
+
+    /* Styles applied to the root element if `color="transparent"`. */
+    colorTransparent: {
+      backgroundColor: 'transparent',
+      color: 'inherit'
     }
   };
 };
@@ -93,7 +104,7 @@ const AppBar = React.forwardRef(function AppBar(props, ref) {
     square: true,
     component: "header",
     elevation: 4,
-    className: clsx(classes.root, classes[`position${capitalize(position)}`], className, color !== 'inherit' && classes[`color${capitalize(color)}`], {
+    className: clsx(classes.root, classes[`position${capitalize(position)}`], classes[`color${capitalize(color)}`], className, {
       fixed: 'mui-fixed'
     }[position]),
     ref: ref
@@ -124,7 +135,7 @@ process.env.NODE_ENV !== "production" ? AppBar.propTypes = {
   /**
    * The color of the component. It supports those theme colors that make sense for this component.
    */
-  color: PropTypes.oneOf(['default', 'inherit', 'primary', 'secondary']),
+  color: PropTypes.oneOf(['default', 'inherit', 'primary', 'secondary', 'transparent']),
 
   /**
    * The positioning type. The behavior of the different options is described

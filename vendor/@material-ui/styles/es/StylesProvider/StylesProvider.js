@@ -30,8 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 let injectFirstNode;
-
-function StylesProvider(props) {
+export default function StylesProvider(props) {
   const {
     children,
     injectFirst = false,
@@ -80,7 +79,6 @@ function StylesProvider(props) {
     value: context
   }, children);
 }
-
 process.env.NODE_ENV !== "production" ? StylesProvider.propTypes = {
   /**
    * Your component tree.
@@ -147,5 +145,3 @@ process.env.NODE_ENV !== "production" ? StylesProvider.propTypes = {
 if (process.env.NODE_ENV !== 'production') {
   process.env.NODE_ENV !== "production" ? StylesProvider.propTypes = exactProp(StylesProvider.propTypes) : void 0;
 }
-
-export default StylesProvider;

@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = makeStyles;
 
 var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
 
@@ -273,6 +273,3 @@ function makeStyles(stylesOrCreator) {
     return getClasses(instance.current, props.classes, Component);
   };
 }
-
-var _default = makeStyles;
-exports.default = _default;

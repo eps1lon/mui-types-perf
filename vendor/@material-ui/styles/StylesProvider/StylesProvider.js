@@ -5,7 +5,8 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.StylesContext = exports.sheetsManager = void 0;
+exports.default = StylesProvider;
+exports.StylesContext = exports.sheetsManager = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -168,6 +169,3 @@ process.env.NODE_ENV !== "production" ? StylesProvider.propTypes = {
 if (process.env.NODE_ENV !== 'production') {
   process.env.NODE_ENV !== "production" ? StylesProvider.propTypes = (0, _utils.exactProp)(StylesProvider.propTypes) : void 0;
 }
-
-var _default = StylesProvider;
-exports.default = _default;

@@ -179,7 +179,7 @@ export var styles = function styles(theme) {
         backgroundColor: fade(theme.palette.secondary.main, theme.palette.action.hoverOpacity)
       }
     },
-    // TODO remove in V5
+    // TODO v5: remove
 
     /* Styles applied to the `avatar` element. */
     avatar: {},
@@ -218,7 +218,7 @@ export var styles = function styles(theme) {
       color: 'inherit'
     },
 
-    /* Styles applied to the label `span` element`. */
+    /* Styles applied to the label `span` element. */
     label: {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
@@ -226,6 +226,8 @@ export var styles = function styles(theme) {
       paddingRight: 12,
       whiteSpace: 'nowrap'
     },
+
+    /* Styles applied to the label `span` element if `size="small"`. */
     labelSmall: {
       paddingLeft: 8,
       paddingRight: 8

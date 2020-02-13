@@ -42,7 +42,7 @@ var styles = function styles(theme) {
       height: 4
     },
 
-    /* Styles applied to the root and bar2 element if `color="primary"`; bar2 if `variant-"buffer"`. */
+    /* Styles applied to the root and bar2 element if `color="primary"`; bar2 if `variant="buffer"`. */
     colorPrimary: {
       backgroundColor: backgroundPrimary
     },

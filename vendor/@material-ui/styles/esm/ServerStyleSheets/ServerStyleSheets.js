@@ -53,4 +53,4 @@ function () {
   return ServerStyleSheets;
 }();
 
-export default ServerStyleSheets;
+export { ServerStyleSheets as default };

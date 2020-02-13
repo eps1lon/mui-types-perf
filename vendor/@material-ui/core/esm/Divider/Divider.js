@@ -45,6 +45,12 @@ export var styles = function styles(theme) {
     vertical: {
       height: '100%',
       width: 1
+    },
+
+    /* Styles applied to the root element if `flexItem={true}`. */
+    flexItem: {
+      alignSelf: 'stretch',
+      height: 'auto'
     }
   };
 };
@@ -55,6 +61,8 @@ var Divider = React.forwardRef(function Divider(props, ref) {
       className = props.className,
       _props$component = props.component,
       Component = _props$component === void 0 ? 'hr' : _props$component,
+      _props$flexItem = props.flexItem,
+      flexItem = _props$flexItem === void 0 ? false : _props$flexItem,
       _props$light = props.light,
       light = _props$light === void 0 ? false : _props$light,
       _props$orientation = props.orientation,
@@ -63,10 +71,10 @@ var Divider = React.forwardRef(function Divider(props, ref) {
       role = _props$role === void 0 ? Component !== 'hr' ? 'separator' : undefined : _props$role,
       _props$variant = props.variant,
       variant = _props$variant === void 0 ? 'fullWidth' : _props$variant,
-      other = _objectWithoutProperties(props, ["absolute", "classes", "className", "component", "light", "orientation", "role", "variant"]);
+      other = _objectWithoutProperties(props, ["absolute", "classes", "className", "component", "flexItem", "light", "orientation", "role", "variant"]);
 
   return React.createElement(Component, _extends({
-    className: clsx(classes.root, className, variant !== 'fullWidth' && classes[variant], absolute && classes.absolute, light && classes.light, {
+    className: clsx(classes.root, className, variant !== 'fullWidth' && classes[variant], absolute && classes.absolute, flexItem && classes.flexItem, light && classes.light, {
       vertical: classes.vertical
     }[orientation]),
     role: role,
@@ -95,6 +103,11 @@ process.env.NODE_ENV !== "production" ? Divider.propTypes = {
    * Either a string to use a DOM element or a component.
    */
   component: PropTypes.elementType,
+
+  /**
+   * If `true`, the divider will adapt to a parent flex container.
+   */
+  flexItem: PropTypes.bool,
 
   /**
    * If `true`, the divider will have a lighter color.

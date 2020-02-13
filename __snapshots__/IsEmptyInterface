@@ -5,11 +5,11 @@ Nodes:        180254
 Identifiers:   62545
 Symbols:      102462
 Types:         33716
-Memory used: 146633K
-I/O read:      0.02s
+Memory used: 142202K
+I/O read:      0.01s
 I/O write:     0.00s
-Parse time:    0.65s
-Bind time:     0.28s
-Check time:    3.33s
+Parse time:    0.55s
+Bind time:     0.23s
+Check time:    2.73s
 Emit time:     0.00s
-Total time:    4.26s
+Total time:    3.51s
