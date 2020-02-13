@@ -17,7 +17,7 @@ export interface BaseCSSProperties extends CSS.Properties<number | string> {
 }
 
 export interface CSSProperties extends BaseCSSProperties {
-  // Allow pseudo selectors and media queries
+  // Allow untyped pseudo selectors and media queries
   // `unknown` is used since TS does not allow assigning an interface without
   // an index signature to one with an index signature. This is to allow type safe
   // module augmentation.
@@ -25,7 +25,7 @@ export interface CSSProperties extends BaseCSSProperties {
   // `CSSProperties` but this doesn't work. The index signature needs to cover
   // BaseCSSProperties as well. Usually you would use `BaseCSSProperties[keyof BaseCSSProperties]`
   // but this would not allow assigning React.CSSProperties to CSSProperties
-  [k: string]: unknown | CSSProperties;
+  [k: string]: unknown;
 }
 
 export type BaseCreateCSSProperties<Props extends object = {}> = {
@@ -34,10 +34,8 @@ export type BaseCreateCSSProperties<Props extends object = {}> = {
 
 export interface CreateCSSProperties<Props extends object = {}>
   extends BaseCreateCSSProperties<Props> {
-  // Allow pseudo selectors and media queries
-  [k: string]:
-    | BaseCreateCSSProperties<Props>[keyof BaseCreateCSSProperties<Props>]
-    | CreateCSSProperties<Props>;
+  // Allow untyped pseudo selectors and media queries
+  [k: string]: unknown;
 }
 
 /**
