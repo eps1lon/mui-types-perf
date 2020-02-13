@@ -7,27 +7,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Install
-      run: yarn install
-      
-    - name: IsEmptyInterface benchmark
-      run: |
-        yarn diag:IsEmptyInterface
-        yarn perf:IsEmptyInterface
-      
-    - name: makeStyles benchmark
-      run: |
-        yarn diag:makeStyles
-        yarn perf:makeStyles
-      
-    - name: styled-components benchmark
-      run: |
-        yarn diag:styled-components
-        yarn perf:styled-components
-      
-    - name: @material-ui/styles#styled benchmark
-      run: |
-        yarn diag:styled-mui
-        yarn perf:styled-mui
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: yarn install
+
+      - name: IsEmptyInterface benchmark
+        run: |
+          yarn diag:IsEmptyInterface
+          yarn perf:IsEmptyInterface
+
+      - name: makeStyles benchmark
+        run: |
+          yarn diag:makeStyles
+          yarn perf:makeStyles
+
+      - name: styled-components benchmark
+        run: |
+          yarn diag:styled-components
+          yarn perf:styled-components
+
+      - name: @material-ui/styles#styled benchmark
+        run: |
+          yarn diag:styled-mui
+          yarn perf:styled-mui
