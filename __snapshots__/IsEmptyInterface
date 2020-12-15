@@ -1,15 +1,15 @@
 sources/IsEmptyInterface.test.ts(11,27): error TS2554: Expected 1 arguments, but got 0.
 Files:            54
-Lines:         61537
-Nodes:        180301
-Identifiers:   62579
-Symbols:      101171
-Types:         33804
-Memory used: 147062K
+Lines:         61535
+Nodes:        180284
+Identifiers:   62572
+Symbols:       99657
+Types:         33792
+Memory used: 134494K
 I/O read:      0.01s
 I/O write:     0.00s
-Parse time:    0.59s
-Bind time:     0.24s
-Check time:    3.50s
+Parse time:    0.64s
+Bind time:     0.25s
+Check time:    3.04s
 Emit time:     0.00s
-Total time:    4.33s
+Total time:    3.92s
